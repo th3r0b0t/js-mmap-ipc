@@ -3,21 +3,32 @@
   "version": "0.1.0",
   "packageType": "module",
   "description": "Maps a shared memory as the backing store and provide it as Nodejs Buffer (aka. Napi::Buffer)",
-  "keywords": ["mmap", "shm", "shared memory", "IPC", "flock", "file lock"],
+  "keywords": [
+    "mmap",
+    "shm",
+    "shared memory",
+    "IPC",
+    "flock",
+    "file lock"
+  ],
   "bugs": "https://github.com/th3r0b0t/js-mmap-ipc/issues",
   "main": "index.js",
   "author": "Shahab Ouraie - mailto:shahabouraie@gmail.com",
   "license": "Mit",
-  "repository": "github:th3r0b0t/js-mmap-ipc",
-  "os": ["linux"],
-  "dependencies":
-  {
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/th3r0b0t/js-mmap-ipc.git"
+  },
+  "os": [
+    "linux"
+  ],
+  "dependencies": {
     "bindings": "*",
     "node-addon-api": "*",
     "node-gyp": "*"
   },
-  "scripts":
-  {
+  "scripts": {
+    "preinstall": "npm update",
     "reconf": "node-gyp configure",
     "clean": "node-gyp clean",
     "run:without_dbg": "node index.js",
@@ -25,5 +36,5 @@
     "build:release": "node-gyp -j 8 build",
     "rebuild:dbg": "node-gyp -j 8 rebuild --debug",
     "rebuild:release": "node-gyp -j 8 rebuild"
- }
+  }
 }
