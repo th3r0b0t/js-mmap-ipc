@@ -1,6 +1,6 @@
 'use strict'
 
-const { mmapIPC } = require('bindings')('mmap-ipc')
+const { mmapIPC } = require('bindings')('mmapIPC')
 module.exports = mmapIPC;
 
 /**
