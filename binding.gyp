@@ -2,7 +2,7 @@
   "targets":
   [
     {
-      "target_name": "mmapIPC",
+      "target_name": "mmap-ipc",
       "sources": [ "mmapIPC.cpp" ],
       "include_dirs": [ "node_modules/node-addon-api" ],
       "defines": [ "NAPI_DISABLE_CPP_EXCEPTIONS", "NODE_ADDON_API_ENABLE_TYPE_CHECK_ON_AS" ]

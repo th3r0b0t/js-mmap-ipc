@@ -1,6 +1,6 @@
 'use strict'
 
-const { mmapIPC } = require('bindings')('mmapIPC')
+const { mmapIPC } = require('bindings')('mmap-ipc')
 module.exports = mmapIPC;
 
 /**
@@ -14,9 +14,9 @@ module.exports = mmapIPC;
  * You should read about race-conditions and deadlock with flock(2) locks, if you hadn't before!
  */
 
-/*
+
 let mmap_id     = "firstBuf";   //This name is used to open the same buffer in different processes
-let mmap_size   = "4096";       // aka. 4KB
+let mmap_size   = 4096;       // aka. 4KB
 let lock_page   = true;         // Wether to lock the memory page using mlock(2) MLOCK_ONFAULT (this is complete different thing with read/write locks!)
 const buf1 = new mmapIPC(mmap_id, mmap_size, lock_page);
 
@@ -40,4 +40,3 @@ console.log( buf1.acquireWriteLock() );
 
 console.log( buf1.removeLock() );
 console.log( "Removing lock..." );
-*/
