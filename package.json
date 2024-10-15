@@ -28,7 +28,7 @@
     "node-gyp": "*"
   },
   "scripts": {
-    "preinstall": "npm update",
+    "preinstall": "npm update; node-gyp rebuild;",
     "reconf": "node-gyp configure",
     "clean": "node-gyp clean",
     "run:without_dbg": "node index.js",
