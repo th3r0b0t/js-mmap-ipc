@@ -1,0 +1,25 @@
+{
+  "name": "mmap-ipc",
+  "version": "0.1.0",
+  "packageType": "module",
+  "description": "Maps a shared memory as the backing store and provide it as Nodejs Buffer (aka. Napi::Buffer)",
+  "main": "index.js",
+  "author": "Shahab Ouraie - mailto:shahabouraie@gmail.com",
+  "license": "Mit",
+  "dependencies":
+  {
+    "bindings": "*",
+    "node-addon-api": "*",
+    "node-gyp": "*"
+  },
+  "scripts":
+  {
+    "reconf": "node-gyp configure",
+    "clean": "node-gyp clean",
+    "run:without_dbg": "node index.js",
+    "build:dbg": "node-gyp -j 8 build --debug",
+    "build:release": "node-gyp -j 8 build",
+    "rebuild:dbg": "node-gyp -j 8 rebuild --debug",
+    "rebuild:release": "node-gyp -j 8 rebuild"
+ }
+}
