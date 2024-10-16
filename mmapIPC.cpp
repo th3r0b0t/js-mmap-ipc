@@ -11,6 +11,7 @@
 #include <fcntl.h>           /* For O_* constants */
 #include <sys/file.h>        /* For flock(2)*/
 //#include <cstdio>
+#include <errno.h>
 #include <napi.h>
 
 
@@ -58,8 +59,18 @@ void mmapIPC::freeCallback(Napi::Env, void* memoryAddress, shm_metadata* hint)
 
 int mmapIPC::createShmFile( const char *name, std::size_t memLenght)
 {
-    int shm_fd = shm_open(name, O_RDWR | O_CREAT | O_TRUNC, 00777);
-    ftruncate(shm_fd, memLenght);
+    errno = 0;
+    int shm_fd;
+    shm_fd = shm_open(name, O_RDWR | O_CREAT | O_EXCL, 00777);
+    if(shm_fd == -1 && errno == EEXIST)
+    {
+        errno = 0;
+        shm_fd = shm_open(name, O_RDWR | O_CREAT, 00777);
+    }
+    else
+    {
+        ftruncate(shm_fd, memLenght);
+    }
     return shm_fd;
 }
 

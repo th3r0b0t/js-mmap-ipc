@@ -1,6 +1,6 @@
 {
   "name": "mmap-ipc",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "packageType": "module",
   "description": "Maps a shared memory as the backing store and provide it as Nodejs Buffer (aka. Napi::Buffer)",
   "keywords": [
