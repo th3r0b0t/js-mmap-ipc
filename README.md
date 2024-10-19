@@ -1,4 +1,4 @@
-# Mmap-IPC for Node.JS
+# Mmap-IPC for Node.JS <img alt="NPM Version" src="https://img.shields.io/npm/v/mmap-ipc?style=flat&logo=npm&logoColor=cb3837">
 ### Description:
 This module is a native addon providing you with the ability to create a shared memory file and use it as `Napi::Buffer` inside Node.JS!  
 It also provides you with a synchronization mechanism using flock to cordinate reads/writes between multiple processes using the same memory region. 
